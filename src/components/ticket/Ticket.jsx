@@ -1,21 +1,26 @@
-import { Paper } from "@mui/material";
-import React from "react";
+import { Chip, Paper, Typography } from "@mui/material";
 import "./Ticket.css";
 
 function Ticket() {
   return (
-    <Paper elevation={0}>
+    <Paper
+      elevation={0}
+      variant="outlined"
+      sx={{ padding: "10px", borderRadius: "8px" }}
+    >
       <div className="ticket__header">
-        <h3>Cannot access the system</h3>
-        <h4>3h ago</h4>
+        <Typography variant="subtitle1" sx={{ fontWeight: "600" }}>
+          Cannot access the system
+        </Typography>
+        <Typography variant="subtitle2" sx={{ fontWeight: "600" }}>3h ago</Typography>
       </div>
-      <p>
+      <Typography variant="body2">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem ut
         deserunt, voluptatem deleniti aspernatur est modi fuga! Cum, eos
         molestias.
-      </p>
+      </Typography>
       <div className="tags">
-        <p>Urgent</p>
+        <Chip label="Urgent" color="warning"/>
       </div>
     </Paper>
   );
