@@ -1,6 +1,9 @@
 import React from "react";
 import "./SideBar.css";
-import ticket from "../../assets/ticket.png";
+import { Button } from "@mui/material";
+import AutoAwesomeMosaicIcon from '@mui/icons-material/AutoAwesomeMosaic';
+import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
+import AnalyticsIcon from '@mui/icons-material/Analytics';
 
 function SideBar() {
   return (
@@ -9,18 +12,15 @@ function SideBar() {
         <h2>Resolve</h2>
       </div>
       <div className="sidebar__tabs">
-        <button className="tab">
-          <img src={ticket} alt="image" className="tab__logo" />
-          <p className="tab__text">Overview</p>
-        </button>
-        <div className="tab">
-          <img src={ticket} alt="image" className="tab__logo" />
-          <p className="tab__text">Analytics</p>
-        </div>
-        <div className="tab">
-          <img src={ticket} alt="image" className="tab__logo" />
-          <p className="tab__text">Tickets</p>
-        </div>
+        <Button startIcon={<AutoAwesomeMosaicIcon/>} size="large" sx={{color: "#000"}}>
+          Overview
+        </Button>
+        <Button startIcon={<AnalyticsIcon/>} size="large" sx={{color: "#000"}}>
+          Analytics
+        </Button>
+        <Button startIcon={<ConfirmationNumberIcon/>} size="large" sx={{color: "#000"}}>
+          Tickets
+        </Button>
       </div>
     </div>
   );
