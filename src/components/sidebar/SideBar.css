@@ -4,7 +4,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-right: 1px solid #989eb3;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #181823;
 }
 .logo{
     margin: 10px auto;
@@ -15,4 +18,22 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 25px;
+    width: 100%;
+}
+button{
+    background: none;
+    cursor: pointer;
+    border: none;
+}
+.tab{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 25px 10px 25px;
+    color: #e9f8f9;
+    width: 100%;
+}
+.tab:hover{
+    background-color: #537fe7;
+    color: #eef0fa;
 }
