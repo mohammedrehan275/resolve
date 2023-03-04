@@ -1,11 +1,13 @@
 import "./App.css";
 import SideBar from "./components/sidebar/SideBar";
-import Button from "@mui/material/Button";
-import Tab from "@mui/material/Tab";
-import Tabs from "@mui/material/Tabs";
 import { useState } from "react";
 import Ticket from "./components/ticket/Ticket";
-import { Typography } from "@mui/material";
+import {
+  Typography,
+  Tab,
+  Tabs,
+} from "@mui/material";
+import NewTicket from "./components/newTicket/NewTicket";
 
 function App() {
   const [value, setValue] = useState(0);
@@ -17,7 +19,7 @@ function App() {
   function a11yProps(index) {
     return {
       id: `simple-tab-${index}`,
-      'aria-controls': `simple-tabpanel-${index}`,
+      "aria-controls": `simple-tabpanel-${index}`,
     };
   }
 
@@ -27,7 +29,7 @@ function App() {
       <div className="main__area">
         <div className="header">
           <Typography variant="h4">Tickets</Typography>
-          <Button variant="contained">New Ticket</Button>
+          <NewTicket />
         </div>
         <Tabs
           value={value}
@@ -39,6 +41,9 @@ function App() {
           <Tab label="Item Three" {...a11yProps(2)} />
         </Tabs>
         <div className="tickets">
+          <Ticket />
+          <Ticket />
+          <Ticket />
           <Ticket />
           <Ticket />
           <Ticket />

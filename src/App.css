@@ -3,7 +3,9 @@
   background-color: #eef0fa;
 }
 .main__area{
-  margin: 50px;
+  /* margin: 50px; */
+  margin-left: 200px;
+  padding: 50px;
 }
 .header{
   display: flex;
