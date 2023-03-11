@@ -27,7 +27,16 @@ function TicketOptions({ opt, icon, control }) {
         name="assignee"
         control={control}
         render={({ field: { onChange } }) => (
-          <Menu anchorEl={anchorEl} open={open} onClose={handleCloseEl}>
+          <Menu
+            id="lock-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleCloseEl}
+            MenuListProps={{
+              "aria-labelledby": "lock-button",
+              role: "listbox",
+            }}
+          >
             {opt.map((option, index) => (
               <MenuItem
                 key={option}
