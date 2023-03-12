@@ -37,7 +37,7 @@ function NewTicket() {
   // console.log(data);
 
   const todos = useSelector((state) => state.ticket);
-  console.log(todos)
+  // console.log(todos)
 
   // // initial the dispatch here
   const dispatch = useDispatch();
@@ -52,6 +52,21 @@ function NewTicket() {
   const onSubmit = (data) => {
     setData(data)
     dispatch(addTicket(data));
+
+    fetch('http://localhost:5000/api/post', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => response.text())
+    .then(data => {
+      console.log(data)
+    })
+    .catch(error => {
+      console.log('Error sending data: ', error)
+    })
   }
 
   const handleClickOpen = () => {
@@ -138,7 +153,7 @@ function NewTicket() {
             <Button color="error" onClick={handleClose}>
               Cancel
             </Button>
-            <Button type="submit">Save Issue</Button>
+            <Button type="submit" onClick={handleSubmit(onSubmit)}>Save Issue</Button>
           </div>
         </DialogActions>
       </Dialog>
